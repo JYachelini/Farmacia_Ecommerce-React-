@@ -1,8 +1,8 @@
-import { createElement, useState} from "react";
+// import { useState } from "react";
 
 export default function cartWidget() {
     return (
-        <div class="counter-conteiner">
+        <div className="counter-conteiner">
             <span id="counter"></span>
             <button className="btn-carrito" id="btn-carrito">
                 <svg
