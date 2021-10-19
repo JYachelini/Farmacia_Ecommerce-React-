@@ -6,7 +6,8 @@ export default function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer greeting="Test"/>
+      <ItemListContainer/>
+      {/* No le paso el dato de greeting porque por el momento no se lo quiero pasar */}
     </>
   );
 }

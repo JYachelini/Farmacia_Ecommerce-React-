@@ -1159,6 +1159,38 @@ footer .underline-center::after {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.sub-card h1 {
+  text-align: center;
+}
+
+.sub-card div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 1rem;
+  font-size: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.sub-card div button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 20px;
+}
+
+.addTest {
+  width: 100%;
+  border: none;
+  padding: .5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 #emptyCart {
   margin-top: 1.5rem;
 }
