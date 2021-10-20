@@ -1,15 +1,12 @@
-import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "../ItemList/ItemList";
+import Productos from "../Item/Productos.json";
 
-const ItemListContainer = ({greeting}) => {
-    return (
-        <div className="conteiner-articles">
-            <h1>{greeting}</h1>
-            <div className="card">
-                <ItemCount stock="5" initial="1" name="Item 1"/>
-                {/* <ItemCount stock="0" initial="1" name="Item 2"/> */}
-            </div>
-        </div>
-    )
-}
+const ItemListContainer = ({ greeting }) => {
+  return (
+    <div className="conteiner-articles">
+      {Productos ? Productos.map(producto => <ItemList items={producto} key={producto.id}/>) : "Loading..."}
+    </div>
+  );
+};
 
 export default ItemListContainer;
