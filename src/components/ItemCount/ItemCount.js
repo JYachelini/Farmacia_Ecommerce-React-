@@ -1,5 +1,5 @@
 import { useState } from "react";
-const ItemCount = ({ stock, initial, onAdd}) => {
+const ItemCount = ({ stock, initial, onAdd, key}) => {
   const [count, setCount] = useState(parseInt(initial));
 
   const add = () => {
@@ -28,7 +28,7 @@ const ItemCount = ({ stock, initial, onAdd}) => {
           <span>{count}</span>
           <button onClick={add}>+</button>
         </div>
-        <button className="addTest">Agregar al carrito</button>
+        <button className="addTest" data-id={key}>Agregar al carrito</button>
     </>
   );
 };
