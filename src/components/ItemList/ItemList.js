@@ -6,7 +6,7 @@ const ItemList = ({ items }) => {
       <div className="card" data-key={items.id}>
         <img src={items.img} alt="" />
         <div className="sub-card">
-          <a href="#" className="card-titulo">
+          <a href="www.google.com" className="card-titulo">
             {items.nombreComercial}
           </a>
           <div className="card-price">

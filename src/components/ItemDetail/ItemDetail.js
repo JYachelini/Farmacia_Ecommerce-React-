@@ -6,7 +6,7 @@ const ItemDetail = ({ item }) => {
           <>
             <img src={item.img} alt="" />
             <div className="sub-card">
-              <a href="#">{item.nombreComercial}</a>
+              <a href="www.google.com">{item.nombreComercial}</a>
               <p className="card-description">{item.description}</p>
               <p>{item.name}</p>
               <div className="card-price">
