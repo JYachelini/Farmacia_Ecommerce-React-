@@ -12,9 +12,16 @@ export default function App() {
       <Switch>
         <Route exact path="/">
           <ItemListContainer />
+        </Route>
+        <Route exact path="/products/:productId"></Route>
+        <Route exact path="/category"></Route>
+        <Route exact path="/category/:categoryId">
           <ItemDetailContainer />
         </Route>
         {/* <Route path="/cart"><Cart /></Route> */}
+        <Route path="/*">
+          <div className="conteiner-articles">Página de error</div>
+        </Route>
       </Switch>
       {/* <Footer /> */}
     </BrowserRouter>

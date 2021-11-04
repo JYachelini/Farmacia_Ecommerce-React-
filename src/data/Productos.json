@@ -7,7 +7,8 @@
     "stock": 50,
     "laboratory": "Bagó",
     "nombreComercial": "Ulcozol 20",
-    "img": "media/ulcozol.jpg"
+    "img": "media/ulcozol.jpg",
+    "category": "medicamento"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "stock": 0,
     "laboratory": "Savant",
     "nombreComercial": "Fabogesic 600",
-    "img": "media/fabogesic600.png"
+    "img": "media/fabogesic600.png",
+    "category": "medicamento"
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "stock": 5,
     "laboratory": "Ganomma",
     "nombreComercial": "Tafirol 500",
-    "img": "media/tafirol.jpg"
+    "img": "media/tafirol.jpg",
+    "category": "medicamento"
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "stock": 30,
     "laboratory": "Roemmers",
     "nombreComercial": "Vasotenal 10",
-    "img": "media/vasotenal.png"
+    "img": "media/vasotenal.png",
+    "category": "medicamento"
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "stock": 5,
     "laboratory": "Teva argentina",
     "nombreComercial": "Lansoprazol Teva",
-    "img": "media/lansoprazol.png"
+    "img": "media/lansoprazol.png",
+    "category": "medicamento"
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "stock": 50,
     "laboratory": "Cassara",
     "nombreComercial": "Salbutral",
-    "img": "media/salbutral.jpg"
+    "img": "media/salbutral.jpg",
+    "category": "medicamento"
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "stock": 350,
     "laboratory": "Raffo",
     "nombreComercial": "Lipifen",
-    "img": "media/lipifen.jpg"
+    "img": "media/lipifen.jpg",
+    "category": "medicamento"
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "stock": 40,
     "laboratory": "Raffo",
     "nombreComercial": "Zundic",
-    "img": "media/zundic.jpg"
+    "img": "media/zundic.jpg",
+    "category": "medicamento"
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "stock": 44,
     "laboratory": "Temis Lostalo",
     "nombreComercial": "Lostapres",
-    "img": "media/lostapres.jpg"
+    "img": "media/lostapres.jpg",
+    "category": "medicamento"
   },
   {
     "id": 10,
@@ -97,6 +106,7 @@
     "stock": 32,
     "laboratory": "Elea",
     "nombreComercial": "Euthyrox",
-    "img": "media/euthyrox.png"
+    "img": "media/euthyrox.png",
+    "category": "medicamento"
   }
 ]

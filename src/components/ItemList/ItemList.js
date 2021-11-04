@@ -1,21 +1,35 @@
-import ItemCount from "../ItemCount/ItemCount";
+import { useEffect, useState } from "react";
+import Productos from "../../data/Productos.json";
 
-const ItemList = ({ items }) => {
+const ItemList = ({ titulo, category }) => {
+  const [products, setProducts] = useState([]);
+
+  const getData = (data) =>
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (data) {
+          resolve(data);
+        } else {
+          reject("No se encontró nada");
+        }
+      }, 1000);
+    });
+
+  useEffect(() => {
+    getData(Productos)
+      .then((res) =>
+        category
+          ? setProducts(res.filter((product) => product.category === category))
+          : setProducts(products)
+      )
+      .catch((err) => console.log(err));
+  }, []);
   return (
-    <>
-      <div className="card" data-key={items.id}>
-        <img src={items.img} alt="" />
-        <div className="sub-card">
-          <a href="www.google.com" className="card-titulo">
-            {items.nombreComercial}
-          </a>
-          <div className="card-price">
-            <span className="card-price-monto">{items.price}$</span>
-          </div>
-          <ItemCount stock="5" initial="1" />
-        </div>
-      </div>
-    </>
+    <div className="conteiner-articles">
+      {/* {products
+        ? products.map((producto) => <ItemList items={producto} />)
+        : "Cargando..."} */}
+    </div>
   );
 };
 
