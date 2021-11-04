@@ -7,7 +7,7 @@
     "stock": 50,
     "laboratory": "Bagó",
     "nombreComercial": "Ulcozol 20",
-    "img": "media/ulcozol.jpg",
+    "img": "ulcozol.jpg",
     "category": "medicamento"
   },
   {
@@ -18,18 +18,18 @@
     "stock": 0,
     "laboratory": "Savant",
     "nombreComercial": "Fabogesic 600",
-    "img": "media/fabogesic600.png",
+    "img": "fabogesic600.png",
     "category": "medicamento"
   },
   {
     "id": 3,
     "name": "paracetamol",
+    "commercialName": "Tafirol 500",
     "description": "Analgésico Antifebril",
     "price": 341,
     "stock": 5,
     "laboratory": "Ganomma",
-    "nombreComercial": "Tafirol 500",
-    "img": "media/tafirol.jpg",
+    "img": "tafirol.jpg",
     "category": "medicamento"
   },
   {
@@ -40,7 +40,7 @@
     "stock": 30,
     "laboratory": "Roemmers",
     "nombreComercial": "Vasotenal 10",
-    "img": "media/vasotenal.png",
+    "img": "vasotenal.png",
     "category": "medicamento"
   },
   {
@@ -51,7 +51,7 @@
     "stock": 5,
     "laboratory": "Teva argentina",
     "nombreComercial": "Lansoprazol Teva",
-    "img": "media/lansoprazol.png",
+    "img": "lansoprazol.png",
     "category": "medicamento"
   },
   {
@@ -62,7 +62,7 @@
     "stock": 50,
     "laboratory": "Cassara",
     "nombreComercial": "Salbutral",
-    "img": "media/salbutral.jpg",
+    "img": "salbutral.jpg",
     "category": "medicamento"
   },
   {
@@ -73,7 +73,7 @@
     "stock": 350,
     "laboratory": "Raffo",
     "nombreComercial": "Lipifen",
-    "img": "media/lipifen.jpg",
+    "img": "lipifen.jpg",
     "category": "medicamento"
   },
   {
@@ -84,7 +84,7 @@
     "stock": 40,
     "laboratory": "Raffo",
     "nombreComercial": "Zundic",
-    "img": "media/zundic.jpg",
+    "img": "zundic.jpg",
     "category": "medicamento"
   },
   {
@@ -95,7 +95,7 @@
     "stock": 44,
     "laboratory": "Temis Lostalo",
     "nombreComercial": "Lostapres",
-    "img": "media/lostapres.jpg",
+    "img": "lostapres.jpg",
     "category": "medicamento"
   },
   {
@@ -106,7 +106,18 @@
     "stock": 32,
     "laboratory": "Elea",
     "nombreComercial": "Euthyrox",
-    "img": "media/euthyrox.png",
+    "img": "euthyrox.png",
     "category": "medicamento"
+  },
+  {
+    "id": 11,
+    "name": "Cepillo Dental Colgate",
+    "description": "Dientes más blancos en 2 Días. Con los mismos ingredientes activos utilizados por los odontólogos, proporciona una sonrisa nunca antes vista.",
+    "price": 399,
+    "stock": 100,
+    "laboratory": "Colgate",
+    "nombreComercial": "Luminous White",
+    "img": "cepillo-dental-colgate-luminous-white-medio-2x1.png",
+    "category": "cuidado-dental"
   }
 ]

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Productos from "../../data/Productos.json";
+import Item from "../Item/Item";
+
 
 const ItemList = ({ titulo, category }) => {
   const [products, setProducts] = useState([]);
@@ -12,7 +14,7 @@ const ItemList = ({ titulo, category }) => {
         } else {
           reject("No se encontró nada");
         }
-      }, 1000);
+      }, 1500);
     });
 
   useEffect(() => {
@@ -20,15 +22,18 @@ const ItemList = ({ titulo, category }) => {
       .then((res) =>
         category
           ? setProducts(res.filter((product) => product.category === category))
-          : setProducts(products)
+          : setProducts(Productos)
       )
       .catch((err) => console.log(err));
-  }, []);
+  }, [category]);
+
+  console.log(products.length);
   return (
     <div className="conteiner-articles">
-      {/* {products
-        ? products.map((producto) => <ItemList items={producto} />)
-        : "Cargando..."} */}
+      <h1>{titulo}</h1>
+      {products
+        ? products.map((producto) => <Item item={producto} />)
+        : "Cargando..."}
     </div>
   );
 };
