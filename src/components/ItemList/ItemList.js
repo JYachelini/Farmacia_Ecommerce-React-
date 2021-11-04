@@ -3,7 +3,7 @@ import ItemCount from "../ItemCount/ItemCount";
 const ItemList = ({ items }) => {
   return (
     <>
-      <div className="card">
+      <div className="card" data-key={items.id}>
         <img src={items.img} alt="" />
         <div className="sub-card">
           <a href="#" className="card-titulo">

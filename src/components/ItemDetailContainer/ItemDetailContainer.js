@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
             <ItemDetail item={producto} key={producto.id} />
           ))
         : "Cargando..."} */}
-        <ItemDetail item={item} key={item.id} />
+        <ItemDetail item={item}/>
       </>
   )
 }

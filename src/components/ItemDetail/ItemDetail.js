@@ -1,7 +1,7 @@
 const ItemDetail = ({ item }) => {
   return (
     <>
-      <div className="card">
+      <div className="card" data-key={item.id}>
         {item ? (
           <>
             <img src={item.img} alt="" />
