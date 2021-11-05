@@ -11,12 +11,13 @@ export default function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <ItemListContainer />
+          <ItemListContainer greeting="Productos" />
         </Route>
-        <Route exact path="/products/:productId"></Route>
-        <Route exact path="/category"></Route>
-        <Route exact path="/category/:categoryId">
+        <Route exact path="/item/:itemId">
           <ItemDetailContainer />
+        </Route>
+        <Route exact path="/category/:categoryId">
+          <ItemListContainer />
         </Route>
         {/* <Route path="/cart"><Cart /></Route> */}
         <Route path="/*">

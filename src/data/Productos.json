@@ -1,123 +1,123 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "omeprazol",
     "description": "Antiácido Antiulceroso",
     "price": 145,
     "stock": 50,
     "laboratory": "Bagó",
-    "nombreComercial": "Ulcozol 20",
+    "commercialName": "Ulcozol 20",
     "img": "ulcozol.jpg",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "ibuprofeno",
     "description": "Analgésico Antiinflam.",
     "price": 155,
     "stock": 0,
     "laboratory": "Savant",
-    "nombreComercial": "Fabogesic 600",
+    "commercialName": "Fabogesic 600",
     "img": "fabogesic600.png",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "paracetamol",
-    "commercialName": "Tafirol 500",
     "description": "Analgésico Antifebril",
     "price": 341,
     "stock": 5,
     "laboratory": "Ganomma",
+    "commercialName": "Tafirol 500",
     "img": "tafirol.jpg",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "simvastatin",
     "description": "Hipolipemiante",
     "price": 1462,
     "stock": 30,
     "laboratory": "Roemmers",
-    "nombreComercial": "Vasotenal 10",
+    "commercialName": "Vasotenal 10",
     "img": "vasotenal.png",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "lansoprazol",
     "description": "Antiulceroso",
     "price": 1960,
     "stock": 5,
     "laboratory": "Teva argentina",
-    "nombreComercial": "Lansoprazol Teva",
+    "commercialName": "Lansoprazol Teva",
     "img": "lansoprazol.png",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 6,
+    "id": "6",
     "name": "salbutamol",
     "description": "Broncodilatador",
     "price": 822,
     "stock": 50,
     "laboratory": "Cassara",
-    "nombreComercial": "Salbutral",
+    "commercialName": "Salbutral",
     "img": "salbutral.jpg",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 7,
+    "id": "7",
     "name": "Atorvastatin",
     "description": "Hipolipemiante",
     "price": 2325,
     "stock": 350,
     "laboratory": "Raffo",
-    "nombreComercial": "Lipifen",
+    "commercialName": "Lipifen",
     "img": "lipifen.jpg",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 8,
+    "id": "8",
     "name": "amlodipina",
     "description": "Antianginoso Antihipertensivo",
     "price": 1406,
     "stock": 40,
     "laboratory": "Raffo",
-    "nombreComercial": "Zundic",
+    "commercialName": "Zundic",
     "img": "zundic.jpg",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 9,
+    "id": "9",
     "name": "ramipril",
     "description": "Antihipertensivo",
     "price": 4174,
     "stock": 44,
     "laboratory": "Temis Lostalo",
-    "nombreComercial": "Lostapres",
+    "commercialName": "Lostapres",
     "img": "lostapres.jpg",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 10,
+    "id": "10",
     "name": "Levotiroxina",
     "description": "Terapéutica tiroidea",
     "price": 1842,
     "stock": 32,
     "laboratory": "Elea",
-    "nombreComercial": "Euthyrox",
+    "commercialName": "Euthyrox",
     "img": "euthyrox.png",
-    "category": "medicamento"
+    "category": "medicamentos"
   },
   {
-    "id": 11,
+    "id": "11",
     "name": "Cepillo Dental Colgate",
     "description": "Dientes más blancos en 2 Días. Con los mismos ingredientes activos utilizados por los odontólogos, proporciona una sonrisa nunca antes vista.",
     "price": 399,
     "stock": 100,
     "laboratory": "Colgate",
-    "nombreComercial": "Luminous White",
+    "commercialName": "Luminous White",
     "img": "cepillo-dental-colgate-luminous-white-medio-2x1.png",
-    "category": "cuidado-dental"
+    "category": "cuidado-bucal"
   }
 ]

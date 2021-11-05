@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Productos from "../../data/Productos.json";
 import Item from "../Item/Item";
 
-
 const ItemList = ({ titulo, category }) => {
   const [products, setProducts] = useState([]);
 
@@ -26,15 +25,13 @@ const ItemList = ({ titulo, category }) => {
       )
       .catch((err) => console.log(err));
   }, [category]);
-
-  console.log(products.length);
   return (
-    <div className="conteiner-articles">
-      <h1>{titulo}</h1>
-      {products
+    <section className="conteiner-articles">
+      <h1>{titulo ? titulo : category.replace(/-+/g, " ")}</h1>
+      {products.length
         ? products.map((producto) => <Item item={producto} />)
         : "Cargando..."}
-    </div>
+    </section>
   );
 };
 
