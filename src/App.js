@@ -4,6 +4,7 @@ import "./Styles/App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Footer from "./components/Footer/Footer";
 
 export default function App() {
   return (
@@ -24,7 +25,7 @@ export default function App() {
           <div className="conteiner-articles">Página de error</div>
         </Route>
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -1,9 +1,17 @@
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ItemDetail = ({ item }) => {
-  const url =
-    "https://raw.githubusercontent.com/JYachelini/Proyecto_React/main/src/assets/img/";
+  const [countCart, setCountCart] = useState(0);
+
+  const url = "https://raw.githubusercontent.com/JYachelini/Proyecto_React/main/src/assets/img/";
+
+  const onAdd = (quantityToAdd) => {
+    setCountCart(quantityToAdd);
+    console.log(countCart);
+  };
+
   return (
     <section className="card" data-key={item.id}>
       {item ? (
@@ -18,7 +26,7 @@ const ItemDetail = ({ item }) => {
             <div className="card-price">
               <span className="card-price-monto">{item.price}$</span>
             </div>
-            <ItemCount stock="5" initial="1" />
+            <ItemCount stock={item.stock} initial="1" onAdd={onAdd} id={item.id} />
           </div>
         </>
       ) : (
