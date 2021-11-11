@@ -26,11 +26,7 @@ const ItemDetailContainer = () => {
       })
       .catch((err) => console.log(err));
   }, [itemId]);
-  return (
-    <div className="conteiner-articles">
-      {itemDetail ? <ItemDetail item={itemDetail} /> : "Cargando..."}
-    </div>
-  );
+  return <div className="conteiner-articles">{itemDetail ? <ItemDetail item={itemDetail} /> : "Cargando..."}</div>;
 };
 
 export default ItemDetailContainer;

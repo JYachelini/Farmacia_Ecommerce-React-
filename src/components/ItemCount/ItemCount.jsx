@@ -1,6 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-const ItemCount = ({ stock, initial, onAdd, id }) => {
+import { useState, useContext } from "react";
+import { CartContext } from "../../contexts/cart/CartContext";
+const ItemCount = ({ stock, initial, onAdd, item }) => {
   const [count, setCount] = useState(parseInt(initial));
 
   const add = () => {
@@ -21,13 +22,6 @@ const ItemCount = ({ stock, initial, onAdd, id }) => {
     }
   };
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    if (count !== 0) {
-      onAdd(count);
-    }
-  };
-
   return (
     <>
       <div className="counterTEST">
@@ -35,11 +29,11 @@ const ItemCount = ({ stock, initial, onAdd, id }) => {
         <span>{count}</span>
         <button onClick={add}>+</button>
       </div>
-      <Link to="/cart">
-        <button className="addTest" onClick={handleClick} data-key={id}>
-          Agregar al carrito
-        </button>
-      </Link>
+      <button className="addTest" onClick={() => onAdd(item, count)}>
+        Agregar al carrito
+      </button>
+      {/* <button onClick={() => removeItem(item)}>Borrar producto</button>
+      <button onClick={clearCart}>borrar carrito</button> */}
     </>
   );
 };

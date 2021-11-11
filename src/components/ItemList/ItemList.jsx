@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Productos from "../../data/Productos.json";
 import Item from "../Item/Item";
+import Loader from "../Loader/Loader";
 
 const ItemList = ({ titulo, category }) => {
   const [products, setProducts] = useState([]);
@@ -18,20 +19,16 @@ const ItemList = ({ titulo, category }) => {
 
   useEffect(() => {
     getData(Productos)
-      .then((res) =>
-        category
-          ? setProducts(res.filter((product) => product.category === category))
-          : setProducts(Productos)
-      )
+      .then((res) => (category ? setProducts(res.filter((product) => product.category === category)) : setProducts(Productos)))
       .catch((err) => console.log(err));
   }, [category]);
   return (
-    <section className="conteiner-articles">
-      <h1>{titulo ? titulo : category.replace(/-+/g, " ")}</h1>
-      {products.length
-        ? products.map((producto) => <Item item={producto} />)
-        : "Cargando..."}
-    </section>
+    <>
+      <section className="conteiner-articles">
+        <h1>{titulo ? titulo : category.replace(/-+/g, " ")}</h1>
+        {products.length ? products.map((producto) => <Item item={producto} />) : <Loader />}
+      </section>
+    </>
   );
 };
 
