@@ -803,6 +803,18 @@ footer .underline-center::after {
   padding: 20px;
 }
 
+.carrito #carrito .counter-to-cart {
+  border: none;
+  border-radius: none;
+  font-size: 15px;
+  margin: 0.5rem 0;
+}
+
+.carrito #carrito .counter-to-cart span {
+  padding: 0;
+  border-bottom: none;
+}
+
 .conteiner-carrito {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -817,7 +829,7 @@ footer .underline-center::after {
 
 .conteiner-carrito span {
   padding: 20px;
-  border-bottom: 1px solid #8c8c8c;
+  border-bottom: 1px solid var(--light-gray);
 }
 
 .conteiner-carrito-total {
@@ -844,6 +856,11 @@ footer .underline-center::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.conteiner-carrito-total div p {
+  font-size: 18px;
+  text-transform: initial;
 }
 
 .conteiner-carrito-pagar {
@@ -955,10 +972,16 @@ footer .underline-center::after {
   font-family: var(--font-details);
   width: 80%;
   color: var(--main-border-color);
+  text-transform: initial;
 }
 
 .carrito-details p:nth-child(1) {
   color: black;
+  font-size: 18px;
+}
+
+.carrito-details p:nth-child(2) {
+  font-size: 12px;
 }
 
 .carrito-details p {
@@ -975,6 +998,14 @@ footer .underline-center::after {
   padding: 15px 0;
   -webkit-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s;
+}
+
+.itemCarrito a {
+  width: 30%;
+}
+
+.itemCarrito a img {
+  width: 100%;
 }
 
 .itemCarrito:not(:first-child) {
@@ -1171,7 +1202,7 @@ footer .underline-center::after {
   text-align: center;
 }
 
-.counterTEST {
+.counter-to-cart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1184,14 +1215,14 @@ footer .underline-center::after {
   border-radius: 5px;
 }
 
-.counterTEST button {
+.counter-to-cart button {
   border: none;
   background: none;
   cursor: pointer;
   width: 20px;
 }
 
-.addTest {
+.add-to-cart {
   width: 100%;
   border: none;
   padding: 0.5rem;
