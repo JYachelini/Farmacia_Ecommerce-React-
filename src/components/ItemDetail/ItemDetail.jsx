@@ -1,23 +1,23 @@
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
-const ItemDetail = ({ product }) => {
+const ItemDetail = ({ item }) => {
   const url = "https://raw.githubusercontent.com/JYachelini/Proyecto_React/main/src/assets/img/";
   return (
-    <section className="card" data-key={product.id}>
-      {product ? (
+    <section className="card" data-key={item.id}>
+      {item ? (
         <>
-          <img src={url + product.img} alt="" />
+          <img src={url + item.img} alt="" />
           <div className="sub-card">
-            <Link to={`/item/${product.id}`} className="card-titulo">
-              {product.commercialName}
+            <Link to={`/item/${item.id}`} className="card-titulo">
+              {item.commercialName}
             </Link>
-            <p className="card-description">{product.description}</p>
-            <p>{product.name}</p>
+            <p className="card-description">{item.description}</p>
+            <p>{item.name}</p>
             <div className="card-price">
-              <span className="card-price-monto">{product.price}$</span>
+              <span className="card-price-monto">{item.price}$</span>
             </div>
-            <ItemCount stock={product.stock} initial="0" item={product} />
+            <ItemCount stock={item.stock} initial="0" item={item} />
           </div>
         </>
       ) : (

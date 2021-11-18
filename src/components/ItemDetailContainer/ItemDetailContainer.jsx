@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { getFirestore } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
+import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
   const { itemId } = useParams();
@@ -19,7 +20,7 @@ const ItemDetailContainer = () => {
       }
     });
   }, [itemId]);
-  return <div className="conteiner-articles">{itemDetail ? <ItemDetail item={itemDetail} /> : "Cargando..."}</div>;
+  return <div className="conteiner-articles">{itemDetail ? <ItemDetail item={itemDetail} /> : <Loader />}</div>;
 };
 
 export default ItemDetailContainer;

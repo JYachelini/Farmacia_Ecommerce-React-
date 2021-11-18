@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../contexts/cart/CartContext";
-const ItemCount = ({ stock, initial, producto, showBtn = true }) => {
+const ItemCount = ({ stock, initial, item, showBtn = true }) => {
   const [count, setCount] = useState(parseInt(initial));
   const { addToCart } = useContext(CartContext);
 
@@ -8,7 +8,7 @@ const ItemCount = ({ stock, initial, producto, showBtn = true }) => {
     if (count < stock) {
       setCount(count + 1);
       if (!showBtn) {
-        addToCart(producto, 1);
+        addToCart(item, 1);
       }
     } else {
       console.log("Stock limite");
@@ -19,13 +19,13 @@ const ItemCount = ({ stock, initial, producto, showBtn = true }) => {
     if (count > 0) {
       setCount(count - 1);
       if (!showBtn) {
-        addToCart(producto, -1);
+        addToCart(item, -1);
       }
     }
   };
 
   const handleClick = () => {
-    addToCart(producto, count);
+    addToCart(item, count);
   };
 
   return (
