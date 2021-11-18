@@ -1,5 +1,5 @@
-[
-  {
+{
+  "1": {
     "id": "1",
     "name": "omeprazol",
     "description": "Antiácido Antiulceroso",
@@ -10,7 +10,7 @@
     "img": "ulcozol.jpg",
     "category": "medicamentos"
   },
-  {
+  "2": {
     "id": "2",
     "name": "ibuprofeno",
     "description": "Analgésico Antiinflam.",
@@ -21,7 +21,7 @@
     "img": "fabogesic600.png",
     "category": "medicamentos"
   },
-  {
+  "3": {
     "id": "3",
     "name": "paracetamol",
     "description": "Analgésico Antifebril",
@@ -32,7 +32,7 @@
     "img": "tafirol.jpg",
     "category": "medicamentos"
   },
-  {
+  "4": {
     "id": "4",
     "name": "simvastatin",
     "description": "Hipolipemiante",
@@ -43,7 +43,7 @@
     "img": "vasotenal.png",
     "category": "medicamentos"
   },
-  {
+  "5": {
     "id": "5",
     "name": "lansoprazol",
     "description": "Antiulceroso",
@@ -54,7 +54,7 @@
     "img": "lansoprazol.png",
     "category": "medicamentos"
   },
-  {
+  "6": {
     "id": "6",
     "name": "salbutamol",
     "description": "Broncodilatador",
@@ -65,7 +65,7 @@
     "img": "salbutral.jpg",
     "category": "medicamentos"
   },
-  {
+  "7": {
     "id": "7",
     "name": "Atorvastatin",
     "description": "Hipolipemiante",
@@ -76,7 +76,7 @@
     "img": "lipifen.jpg",
     "category": "medicamentos"
   },
-  {
+  "8": {
     "id": "8",
     "name": "amlodipina",
     "description": "Antianginoso Antihipertensivo",
@@ -87,7 +87,7 @@
     "img": "zundic.jpg",
     "category": "medicamentos"
   },
-  {
+  "9": {
     "id": "9",
     "name": "ramipril",
     "description": "Antihipertensivo",
@@ -98,7 +98,7 @@
     "img": "lostapres.jpg",
     "category": "medicamentos"
   },
-  {
+  "10": {
     "id": "10",
     "name": "Levotiroxina",
     "description": "Terapéutica tiroidea",
@@ -109,7 +109,7 @@
     "img": "euthyrox.png",
     "category": "medicamentos"
   },
-  {
+  "11": {
     "id": "11",
     "name": "Cepillo Dental Colgate",
     "description": "Dientes más blancos en 2 Días. Con los mismos ingredientes activos utilizados por los odontólogos, proporciona una sonrisa nunca antes vista.",
@@ -120,4 +120,4 @@
     "img": "cepillo-dental-colgate-luminous-white-medio-2x1.png",
     "category": "cuidado-bucal"
   }
-]
+}

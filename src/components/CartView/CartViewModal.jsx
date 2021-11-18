@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/cart/CartContext";
-import Item from "../Item/Item";
 import ItemModal from "../ItemModal/ItemModal";
+import { Link } from "react-router-dom";
 
 const CartViewModal = ({ isOpen, closeModal }) => {
   const { cart, clearCart } = useContext(CartContext);
@@ -35,23 +35,25 @@ const CartViewModal = ({ isOpen, closeModal }) => {
               </p>
             )}
           </div>
-          {cart.length ? (<div className="conteiner-carrito-pagar">
-            <div className="conteiner-carrito-total">
-              <button id="btn-vaciar" className="borrar-itemCarrito" onClick={clearCart}>
-                Vaciar carrito
-              </button>
-              <div>
-                <p>
-                  Total<span id="total">{totalPrice}$</span>
-                </p>
+          {cart.length ? (
+            <div className="conteiner-carrito-pagar">
+              <div className="conteiner-carrito-total">
+                <button id="btn-vaciar" className="borrar-itemCarrito" onClick={clearCart}>
+                  Vaciar carrito
+                </button>
+                <div>
+                  <p>
+                    Total<span id="total">{totalPrice}$</span>
+                  </p>
+                </div>
+              </div>
+              <div className="conteiner-btn-pagar">
+                <button id="btn-payment" className="btn-pagar">
+                  <Link>Continuar con la compra</Link>
+                </button>
               </div>
             </div>
-            <div className="conteiner-btn-pagar">
-              <button id="btn-payment" className="btn-pagar">
-                <a>Continuar con la compra</a>
-              </button>
-            </div>
-          </div>) : null}
+          ) : null}
         </div>
       </div>
       {/* <PaymentView /> */}

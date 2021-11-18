@@ -1,26 +1,39 @@
-import { useEffect, useState } from "react";
-import Productos from "../../data/Productos.json";
+import { useState, useEffect } from "react";
 import Item from "../Item/Item";
 import Loader from "../Loader/Loader";
+import { getFirestore } from "../../firebase";
+import { getDocs, collection } from "firebase/firestore";
 
 const ItemList = ({ titulo, category }) => {
   const [products, setProducts] = useState([]);
 
-  const getData = (data) =>
-    new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (data) {
-          resolve(data);
-        } else {
-          reject("No se encontró nada");
-        }
-      }, 1500);
-    });
+  // Pasar todo a donde llama los productos
+  // const [product, setProduct] = useState(null);
+  // useEffect(() => {
+  //   // Esto es para traer un solo elemento de la coleccion
+  //   const db = getFirestore();
+
+  //   const itemsCollection = doc(db, "items", "rDw9CgCj2h0aR2hDVZZQ");
+  //   getDoc(itemsCollection).then((snapshot) => {
+  //     if (snapshot.exists()) {
+  //       setProduct(snapshot.data());
+  //     }
+  //   });
+  // }, []);
 
   useEffect(() => {
-    getData(Productos)
-      .then((res) => (category ? setProducts(res.filter((product) => product.category === category)) : setProducts(Productos)))
-      .catch((err) => console.log(err));
+    // Esto es para traer todos los elementos de la coleccion
+    const db = getFirestore();
+    // where("price", ">", 100)
+    getDocs(collection(db, "items")).then((snapshot) => {
+      let items = snapshot.docs.map((doc) => doc.data());
+      if (category) {
+        items = items.filter((product) => product.category === category);
+        setProducts(items);
+      } else {
+        setProducts(items);
+      }
+    });
   }, [category]);
   return (
     <>

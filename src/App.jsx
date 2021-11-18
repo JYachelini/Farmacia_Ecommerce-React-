@@ -6,6 +6,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Footer from "./components/Footer/Footer";
 import { CartProvider } from "./contexts/cart/CartContext";
+import CartViewModal from "./components/CartView/CartViewModal";
 
 export default function App() {
   return (
@@ -22,7 +23,9 @@ export default function App() {
           <Route exact path="/category/:categoryId">
             <ItemListContainer />
           </Route>
-          {/* <Route path="/cart"><Cart /></Route> */}
+          <Route path="/cart">
+            <CartViewModal />
+          </Route>
           <Route path="/*">
             <div className="conteiner-articles">Página de error</div>
           </Route>
