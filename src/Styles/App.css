@@ -66,9 +66,9 @@ nav a {
 }
 
 .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 .flex-between {
@@ -530,6 +530,12 @@ footer .underline-center::after {
           align-items: center;
 }
 
+.modal-payment-succes.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .payment-succes-text {
   display: none;
 }
@@ -542,6 +548,10 @@ footer .underline-center::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 5px;
+  border: 1px solid red;
+  border-radius: 2px;
+  background-color: #f04b4b42;
 }
 
 #modal-payment {
@@ -561,11 +571,22 @@ footer .underline-center::after {
 }
 
 .modal-payment-nav {
-  padding: 1rem 1rem 0 1rem;
-  background-color: var(--light-gray);
+  padding: 1rem;
+  background-color: #a2ea4985;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  color: #74b328;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal-payment-nav span {
+  width: 50%;
 }
 
 .modal-payment-nav-cards {
@@ -580,6 +601,11 @@ footer .underline-center::after {
 
 .modal-payment-form {
   position: relative;
+}
+
+.modal-payment-form.active {
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
 }
 
 .modal-payment-form form {
@@ -621,23 +647,6 @@ footer .underline-center::after {
 
 .modal-payment-form form div select {
   margin-top: 0.5rem;
-}
-
-.modal-payment-form-date {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.modal-payment-form-date div:nth-child(1) {
-  width: 70%;
 }
 
 .modal-payment-completeBtn {
@@ -889,6 +898,7 @@ footer .underline-center::after {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  z-index: 50;
 }
 
 .btn-cerrar-payment svg {

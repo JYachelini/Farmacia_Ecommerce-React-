@@ -54,7 +54,7 @@ nav {
 }
 
 .flex {
-  display: flex;
+  display: flex !important;
 }
 
 .flex-between {
@@ -406,6 +406,9 @@ footer .underline-center::after {
   min-height: 150px;
   display: none;
   align-items: center;
+  &.active {
+    display: flex;
+  }
 }
 
 .payment-succes-text {
@@ -418,6 +421,10 @@ footer .underline-center::after {
   width: 100%;
   margin-bottom: 1rem;
   display: flex;
+  padding: 5px;
+  border: 1px solid red;
+  border-radius: 2px;
+  background-color: #f04b4b42;
 }
 
 #modal-payment {
@@ -436,11 +443,17 @@ footer .underline-center::after {
 }
 
 .modal-payment-nav {
-  padding: 1rem 1rem 0 1rem;
-  background-color: var(--light-gray);
+  padding: 1rem;
+  background-color: #a2ea4985;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  color: #74b328;
+  display: flex;
+  justify-content: center;
+  & span {
+    width: 50%;
+  }
 }
 
 .modal-payment-nav-cards {
@@ -451,6 +464,9 @@ footer .underline-center::after {
 
 .modal-payment-form {
   position: relative;
+  &.active {
+    filter: blur(1px);
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -484,14 +500,6 @@ footer .underline-center::after {
   }
 }
 
-.modal-payment-form-date {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  & div:nth-child(1) {
-    width: 70%;
-  }
-}
 
 .modal-payment-completeBtn {
   height: 3rem;
@@ -676,6 +684,7 @@ footer .underline-center::after {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  z-index: 50;
   svg {
     fill: rgba(0, 0, 0, 0.47);
     width: 20px;

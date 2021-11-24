@@ -6,27 +6,25 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item, quantity) => {
-    if (quantity >= 1 || quantity === -1) {
-      const product = {
-        name: item.name,
-        price: item.price,
-        quantity: quantity,
-        id: item.id,
-        commercialName: item.commercialName,
-        img: item.img,
-        description: item.description,
-        stock: item.stock,
-      };
-      const existingIndex = cart.findIndex((product) => product.name === item.name);
-      // Se checkea si esta repetido o no
-      if (existingIndex >= 0) {
-        // cart[existingIndex] = { ...cart[existingIndex], quantity: cart[existingIndex].quantity + quantity };
-        setCart(cart.map((item, index) => (existingIndex === index ? { ...item, quantity: item.quantity + quantity } : null)));
+    const isInCart = cart.some((product) => product.id === item.id);
+    if (item.stock >= 0) {
+      if (!isInCart) {
+        item.stock = item.stock - quantity;
+        const newProduct = {
+          ...item,
+          quantity: quantity,
+          stock: item.stock,
+        };
+        setCart([...cart, newProduct]);
       } else {
-        setCart((curr) => [...curr, product]);
+        const existingItem = cart.find((product) => product.id === item.id);
+        // item.stock = item.stock - quantity;
+
+        // Se checkea si esta repetido
+        existingItem.quantity = existingItem.quantity + quantity;
+        existingItem.stock = existingItem.stock - quantity;
+        setCart([...cart]);
       }
-    } else {
-      console.log("No hay stock");
     }
   };
 
@@ -47,5 +45,6 @@ export function CartProvider({ children }) {
     // Se retorna el carrito vacio
     setCart([]);
   };
+
   return <CartContext.Provider value={{ cart, setCart, addToCart, removeItem, clearCart }}>{children}</CartContext.Provider>;
 }

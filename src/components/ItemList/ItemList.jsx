@@ -39,7 +39,7 @@ const ItemList = ({ titulo, category }) => {
     <>
       <section className="conteiner-articles">
         <h1>{titulo ? titulo : category.replace(/-+/g, " ")}</h1>
-        {products.length ? products.map((producto) => <Item item={producto} />) : <Loader />}
+        {products.length ? products.map((producto) => <Item item={producto} key={producto.id} />) : <Loader />}
       </section>
     </>
   );

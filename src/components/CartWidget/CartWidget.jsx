@@ -14,7 +14,7 @@ const CartWidget = () => {
   return (
     <>
       <div className="counter-conteiner">
-        {totalItems > 0 && <span id="counter">{totalItems}</span>}
+        {totalItems !== 0 && <span id="counter">{totalItems}</span>}
         <button className="btn-carrito" id="btn-carrito" onClick={openModal}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "rgba(0, 0, 0, 1)" }} id="carrito-modal">
             <circle cx="10.5" cy="19.5" r="1.5" />

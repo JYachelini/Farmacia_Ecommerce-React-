@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export const CartViewFunction = (initial = false) => {
-    const [isOpen, setIsOpen] = useState(initial);
+  const [isOpen, setIsOpen] = useState(initial);
 
-    const openModal = () => setIsOpen(true);
-    const closeModal = () => setIsOpen(false);
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
-    return [isOpen, openModal, closeModal];
-}
+  return [isOpen, openModal, closeModal];
+};

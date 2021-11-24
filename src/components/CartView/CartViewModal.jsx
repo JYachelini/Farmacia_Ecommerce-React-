@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/cart/CartContext";
+import { CartViewFunction } from "./CartViewFunction";
 import ItemModal from "../ItemModal/ItemModal";
-import { Link } from "react-router-dom";
+import CartViewPayment from "./CartViewPayment.js";
 
 const CartViewModal = ({ isOpen, closeModal }) => {
   const { cart, clearCart } = useContext(CartContext);
@@ -9,10 +10,17 @@ const CartViewModal = ({ isOpen, closeModal }) => {
   // Se saca el total de los items sumando los quantity
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
+  const [isOpenPayment, openModalPayment, closeModalPayment] = CartViewFunction(false);
+
   return (
     <>
-      <div className={`overlay ${isOpen && "is-visible"}`} id="overlay" onClick={closeModal}></div>
-      <div className={`modalCarrito ${isOpen || "carritoClose"} ${isOpen && "is-visible carritoAnimation"}`} id="modalCarrito">
+      <div className={`overlay ${isOpen && !isOpenPayment && "is-visible"}`} id="overlay" onClick={closeModal}></div>
+      <div
+        className={`modalCarrito ${isOpen || "carritoClose"} ${isOpen && !isOpenPayment && "is-visible carritoAnimation"} ${
+          isOpenPayment && "carritoClose"
+        }`}
+        id="modalCarrito"
+      >
         <button className="btn-cerrar-carrito" id="closeCarrito" onClick={closeModal}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "rgba(0, 0, 0, 1)" }}>
             <path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path>
@@ -26,7 +34,7 @@ const CartViewModal = ({ isOpen, closeModal }) => {
               <ul id="carrito">
                 {" "}
                 {cart.map((producto) => (
-                  <ItemModal item={producto} />
+                  <ItemModal item={producto} isOpen={isOpen} key={producto.id} />
                 ))}{" "}
               </ul>
             ) : (
@@ -48,15 +56,15 @@ const CartViewModal = ({ isOpen, closeModal }) => {
                 </div>
               </div>
               <div className="conteiner-btn-pagar">
-                <button id="btn-payment" className="btn-pagar">
-                  <Link>Continuar con la compra</Link>
+                <button id="btn-payment" className="btn-pagar" onClick={openModalPayment}>
+                  Continuar con la compra
                 </button>
               </div>
             </div>
           ) : null}
         </div>
       </div>
-      {/* <PaymentView /> */}
+      <CartViewPayment isOpen={isOpenPayment} closeModal={closeModalPayment} />
     </>
   );
 };

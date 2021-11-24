@@ -17,7 +17,7 @@ const ItemDetail = ({ item }) => {
             <div className="card-price">
               <span className="card-price-monto">{item.price}$</span>
             </div>
-            <ItemCount stock={item.stock} initial="0" item={item} />
+            <ItemCount initial="0" item={item} />
           </div>
         </>
       ) : (
