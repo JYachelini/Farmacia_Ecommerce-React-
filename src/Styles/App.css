@@ -1077,7 +1077,7 @@ footer .underline-center::after {
   font-family: var(--font-details);
 }
 
-.cart-thirdStep .global-container .confirmation-order {
+.cart-thirdStep .confirmation-order {
   width: 33%;
   margin: 4rem auto;
   min-height: 15rem;
@@ -1096,11 +1096,11 @@ footer .underline-center::after {
   font-family: var(--font-details);
 }
 
-.cart-thirdStep .global-container .confirmation-order .success-animation {
+.cart-thirdStep .confirmation-order .success-animation {
   margin: 0 auto;
 }
 
-.cart-thirdStep .global-container .confirmation-order .checkmark {
+.cart-thirdStep .confirmation-order .checkmark {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -1118,7 +1118,7 @@ footer .underline-center::after {
   margin: 0 auto 3rem 0;
 }
 
-.cart-thirdStep .global-container .confirmation-order .checkmark__circle {
+.cart-thirdStep .confirmation-order .checkmark__circle {
   stroke-dasharray: 166;
   stroke-dashoffset: 166;
   stroke-width: 2;
@@ -1129,7 +1129,7 @@ footer .underline-center::after {
           animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
 
-.cart-thirdStep .global-container .confirmation-order .checkmark__check {
+.cart-thirdStep .confirmation-order .checkmark__check {
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
   stroke-dasharray: 48;
@@ -1188,7 +1188,7 @@ footer .underline-center::after {
   }
 }
 
-.cart-thirdStep .global-container .confirmation-order span {
+.cart-thirdStep .confirmation-order span {
   text-align: center;
 }
 
