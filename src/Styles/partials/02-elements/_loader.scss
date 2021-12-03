@@ -1,0 +1,31 @@
+.loader-2{
+	margin: 44px auto;
+	box-sizing: border-box;
+}
+
+.loader-2 {
+	height: 80px;
+	width: 80px;
+
+	.spin {
+		position: relative;
+		box-sizing: border-box;
+		display: block;
+		margin: auto;
+		height: 80px;
+		width: 80px;
+		border: 10px solid #ede7f6;
+		border-top: 10px solid #000;
+		border-radius: 50%;
+		animation: loader-2-spin 2s linear infinite;
+	}
+}
+
+@keyframes loader-2-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

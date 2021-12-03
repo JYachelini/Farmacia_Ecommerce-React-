@@ -1,0 +1,412 @@
+.modal-payment-succes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) perspective(800px);
+  text-align: center;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 10px black, inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+  min-height: 150px;
+  display: none;
+  align-items: center;
+  &.active {
+    display: flex;
+  }
+}
+
+.payment-succes-text {
+  display: none;
+}
+
+.payment-error {
+  color: red;
+  border-radius: 2px;
+  background-color: #f04b4b42;
+}
+
+#modal-payment {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  min-width: 400px;
+  min-height: 200px;
+  background-color: #fff;
+  font-family: var(--font-details);
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.modal-payment-nav {
+  padding: 1rem;
+  background-color: #a2ea4985;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #74b328;
+  display: flex;
+  justify-content: center;
+  & span {
+    width: 50%;
+  }
+}
+
+.modal-payment-nav-cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem;
+}
+
+.modal-payment-form {
+  position: relative;
+  &.active {
+    filter: blur(1px);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 200px;
+    div {
+      span {
+        margin-bottom: 0.5rem;
+        font-family: var(--font-details);
+        color: rgba(0, 0, 0, 0.6);
+      }
+      input,
+      select {
+        border: none;
+        border-bottom: 1px solid#e6e6e6;
+        color: rgba(0, 0, 0, 0.8);
+        height: 2.5rem;
+        font-family: var(--font-details);
+        font-size: 16px;
+        padding: 5px;
+        width: 100%;
+        margin-bottom: 1rem;
+        &:focus-visible {
+          outline: none;
+        }
+      }
+      select {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+.modal-payment-completeBtn {
+  height: 3rem;
+  width: 100%;
+  border: none;
+  background-color: #a2ea49;
+  font-family: var(--font-titles);
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.btn-carrito {
+  border: none;
+  background: transparent;
+  svg {
+    fill: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.modalCarrito {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: fixed;
+  right: -1000px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  min-width: 250px;
+  font-family: var(--font-titles);
+  z-index: 11;
+  bottom: 0;
+  top: 0;
+  width: 100vw;
+  max-width: 40%;
+  padding-bottom: 0;
+}
+
+.carritoAnimation {
+  animation-name: carritoAnimation;
+  animation-duration: 1s;
+  right: 0;
+}
+
+.modal-payment-animation {
+  animation-name: paymentAnimation;
+  animation-duration: 1s;
+  margin-left: 0;
+}
+
+@keyframes paymentAnimation {
+  from {
+    margin-left: 1000px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+.carritoClose {
+  animation: carritoClose 1s;
+  right: -1000px;
+}
+
+@keyframes carritoAnimation {
+  from {
+    right: -1000px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes carritoClose {
+  from {
+    right: 0;
+  }
+  to {
+    right: -1000px;
+  }
+}
+
+.carrito-cant {
+  text-align: center;
+  font-family: var(--font-details);
+}
+.carrito-cant-selector {
+  text-align: left;
+  width: 100%;
+  display: block;
+  select {
+    border: 1px solid var(--main-border-color);
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    font-size: 14px;
+  }
+}
+
+.item-total-price {
+  margin-right: 1rem;
+}
+
+.carrito {
+  position: relative;
+  flex-grow: 1;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  #carrito {
+    align-self: flex-start;
+    padding: 20px;
+    & .counter-to-cart {
+      border: none;
+      border-radius: none;
+      font-size: 15px;
+      margin: 0.5rem 0;
+      span {
+        padding: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.container-carrito {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  span {
+    padding: 20px;
+    border-bottom: 1px solid var(--light-gray);
+  }
+}
+
+.container-carrito-total {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  margin-right: 1rem;
+  border-top: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+  width: 100%;
+  div {
+    font-family: var(--font-details);
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 18px;
+      text-transform: initial;
+    }
+  }
+}
+
+.container-carrito-pagar {
+  background-color: #f8f8f8;
+}
+
+.btn-cerrar-carrito {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  svg {
+    fill: rgba(0, 0, 0, 0.47);
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.btn-cerrar-payment {
+  position: absolute;
+  right: 15px;
+  top: 13px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 50;
+  svg {
+    fill: rgba(0, 0, 0, 0.47);
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.container-btn-pagar {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.btn-pagar {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: transparent;
+  font-family: var(--font-details);
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  transition: 0.2s;
+  width: 50%;
+  &:hover {
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+#btn-vaciar {
+  font-family: var(--font-details);
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+#carrito {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+
+#carrito-modal {
+  cursor: pointer;
+}
+
+#total {
+  margin-left: 10px;
+}
+
+.carrito-img {
+  width: 100%;
+}
+
+.carrito-details {
+  font-family: var(--font-details);
+  width: 80%;
+  color: var(--main-border-color);
+  text-transform: initial;
+  p:nth-child(1) {
+    color: black;
+    font-size: 18px;
+  }
+  p:nth-child(2) {
+    font-size: 12px;
+  }
+  p {
+    padding: 5px 0;
+  }
+}
+
+.itemCarrito {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  transition: all ease-in-out 0.5s;
+  a {
+    width: 30%;
+    img {
+      width: 100%;
+    }
+  }
+  &:not(:first-child) {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  &:hover {
+    background-color: var(--background-color);
+  }
+  & .carrito-details {
+    padding-left: 1rem;
+  }
+}
+
+.borrar-itemCarrito {
+  margin-top: auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 7px 15px;
+  transition: all ease-in-out 0.5s;
+  background: none;
+  font-family: var(--font-details);
+  cursor: pointer;
+  &:hover {
+    background-color: rgba (0, 0, 0, 0.8);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+  }
+  &:active,
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+  }
+}

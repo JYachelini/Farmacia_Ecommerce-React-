@@ -1,8 +1,11 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../contexts/cart/CartContext";
+import { CartModalFunction } from "../Cart/functions/CartModalFunction";
+import CartViewModal from "../Cart/modal/CartViewModal";
 const ItemCount = ({ initial, item, btn = true }) => {
   const [count, setCount] = useState(parseInt(initial));
   const { addToCart, removeItem } = useContext(CartContext);
+  const [isOpen, openModal, closeModal] = CartModalFunction(false);
 
   const add = () => {
     if (btn) {
@@ -37,8 +40,11 @@ const ItemCount = ({ initial, item, btn = true }) => {
     console.log(count <= item.stock);
     console.log(count);
     console.log(item.stock);
-    if (count <= item.stock) {
-      addToCart(item, count);
+    if (count > 0) {
+      if (count <= item.stock) {
+        addToCart(item, count);
+        openModal();
+      }
     }
   };
 
@@ -54,6 +60,7 @@ const ItemCount = ({ initial, item, btn = true }) => {
           Agregar al carrito
         </button>
       )}
+      <CartViewModal isOpen={isOpen} closeModal={closeModal} />
     </>
   );
 };

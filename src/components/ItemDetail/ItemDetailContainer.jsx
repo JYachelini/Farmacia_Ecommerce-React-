@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
+import ItemDetail from "./ItemDetail";
 import { getFirestore } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import Loader from "../Loader/Loader";
@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
       }
     });
   }, [itemId]);
-  return <div className="conteiner-articles">{itemDetail ? <ItemDetail item={itemDetail} /> : <Loader />}</div>;
+  return <div className="container-articles">{itemDetail ? <ItemDetail item={itemDetail} /> : <Loader />}</div>;
 };
 
 export default ItemDetailContainer;

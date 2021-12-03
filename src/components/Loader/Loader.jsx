@@ -6,7 +6,17 @@ const Loader = () => {
     return load;
   };
 
-  return <>{isLoading ? <h1>Loading...</h1> : ""}</>;
+  return (
+    <>
+      {isLoading ? (
+        <div className="loader-2">
+          <div className="spin"></div>
+        </div>
+      ) : (
+        ""
+      )}
+    </>
+  );
 };
 
 export default Loader;

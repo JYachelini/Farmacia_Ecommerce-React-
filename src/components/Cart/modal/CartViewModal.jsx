@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { CartContext } from "../../contexts/cart/CartContext";
-import { CartViewFunction } from "./CartViewFunction";
-import ItemModal from "../ItemModal/ItemModal";
-import CartViewPayment from "./CartViewPayment.js";
+import { CartContext } from "../../../contexts/cart/CartContext";
+import { CartModalFunction } from "../functions/CartModalFunction";
+import ItemModal from "../modal/ItemModal";
+import CartForm from "../page/CartForm";
 
 const CartViewModal = ({ isOpen, closeModal }) => {
   const { cart, clearCart } = useContext(CartContext);
@@ -10,14 +10,15 @@ const CartViewModal = ({ isOpen, closeModal }) => {
   // Se saca el total de los items sumando los quantity
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
-  const [isOpenPayment, openModalPayment, closeModalPayment] = CartViewFunction(false);
+  const [isOpenForm, openModalForm, closeModalForm] = CartModalFunction(false);
 
   return (
     <>
-      <div className={`overlay ${isOpen && !isOpenPayment && "is-visible"}`} id="overlay" onClick={closeModal}></div>
+      <div className={`overlay ${isOpen && !isOpenForm && "is-visible"}`} id="overlay" onClick={closeModal}></div>
+      {/* Cuando la variable isOpen(del modal) sea verdadera y cuando la variable isOpenForm(El modal del formulario), se abré el modal.*/}
       <div
-        className={`modalCarrito ${isOpen || "carritoClose"} ${isOpen && !isOpenPayment && "is-visible carritoAnimation"} ${
-          isOpenPayment && "carritoClose"
+        className={`modalCarrito ${isOpen || "carritoClose"} ${isOpen && !isOpenForm && "is-visible carritoAnimation"} ${
+          isOpenForm && "carritoClose"
         }`}
         id="modalCarrito"
       >
@@ -27,7 +28,7 @@ const CartViewModal = ({ isOpen, closeModal }) => {
             <path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path>
           </svg>
         </button>
-        <div className="conteiner-carrito">
+        <div className="container-carrito">
           <span>Tu carrito</span>
           <div className="carrito">
             {cart.length ? (
@@ -42,10 +43,11 @@ const CartViewModal = ({ isOpen, closeModal }) => {
                 No hay productos en tu carrito
               </p>
             )}
+            {/* Si hay items en el carrito, los mapea y los muestra. Si no hay, imprime "No hay productos en tu carrito" */}
           </div>
           {cart.length ? (
-            <div className="conteiner-carrito-pagar">
-              <div className="conteiner-carrito-total">
+            <div className="container-carrito-pagar">
+              <div className="container-carrito-total">
                 <button id="btn-vaciar" className="borrar-itemCarrito" onClick={clearCart}>
                   Vaciar carrito
                 </button>
@@ -55,16 +57,17 @@ const CartViewModal = ({ isOpen, closeModal }) => {
                   </p>
                 </div>
               </div>
-              <div className="conteiner-btn-pagar">
-                <button id="btn-payment" className="btn-pagar" onClick={openModalPayment}>
+              <div className="container-btn-pagar">
+                <button id="btn-payment" className="btn-pagar" onClick={openModalForm}>
                   Continuar con la compra
                 </button>
               </div>
             </div>
           ) : null}
+          {/* Solo imprime este contenedor si hay items en el carrito */}
         </div>
       </div>
-      <CartViewPayment isOpen={isOpenPayment} closeModal={closeModalPayment} />
+      <CartForm isOpen={isOpenForm} closeModal={closeModalForm} />
     </>
   );
 };

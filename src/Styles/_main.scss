@@ -1,4 +1,10 @@
 @import "styles";
 @import "fonts";
-@import "footer";
-@import "pages/checkout";
+@import "partials/01-components/footer";
+@import "partials/01-components/navbar";
+@import "partials/01-components/main-section";
+@import "partials/01-components/cart";
+@import "partials/02-elements/card";
+@import "partials/02-elements/modal";
+@import "partials/02-elements/loader";
+@import "partials/checkout";

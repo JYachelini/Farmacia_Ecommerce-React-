@@ -1,38 +1,56 @@
-import { addDoc, getFirestore, collection, } from "@firebase/firestore";
+import { addDoc, getFirestore, collection } from "@firebase/firestore";
 import { useContext, useState } from "react";
-import { CartContext } from "../../contexts/cart/CartContext";
-import { Form } from "./Form";
+import { CartContext } from "../../../contexts/cart/CartContext";
+import { Form } from "../functions/Form";
 
 const initialForm = {
   name: "",
+  last: "",
   email: "",
   phone: "",
+  address: "",
 };
-
+// Se setean los valores del formulario
 const validationsForm = (form) => {
   let errors = {};
+  /* Se setean los errores */
   let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+  let regexLast = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
   let regexPhone = /[0-9\s]/;
+  let regexAddress = /[A-Za-z0-9'.-\s,]/;
+  // Las expresiones regulares de cada casilla
 
   if (!form.name.trim()) {
-    errors.name = "Completa el nombre pelotudo.";
+    errors.name = "Por favor, completa el nombre.";
   } else if (!regexName.test(form.name.trim())) {
     errors.name = "Solo puedes ingresar letras y espacios en blanco.";
   }
+  if (!form.last.trim()) {
+    errors.last = "Por favor, completa el apellido.";
+  } else if (!regexLast.test(form.last.trim())) {
+    errors.last = "Solo puedes ingresar letras y espacios en blanco.";
+  }
   if (!form.email.trim()) {
-    errors.email = "Completa el mail pelotudo.";
+    errors.email = "Por favor, completa el email.";
   } else if (!regexEmail.test(form.email.trim())) {
     errors.email = "El Email es incorrecto";
   }
   if (!form.phone.trim()) {
-    errors.phone = "Completa el telefono pelotudo.";
+    errors.phone = "Por favor, completa el telefono.";
   } else if (!regexPhone.test(form.phone.trim())) {
     errors.phone = "Solo puedes ingresar numeros";
   }
+  if (!form.address.trim()) {
+    errors.address = "Por favor, completa la dirección del domicilio.";
+  } else if (!regexAddress.test(form.address.trim())) {
+    errors.address = "Ingresa una dirección valida";
+  }
+  // Si las cassillas estan vacias, ejecutará el primer if. Si las casillas contienen contenido pero no matchea con las expresiones regulares ejecutará el segundo if.
 
   return errors;
 };
+
 export default function CartViewPayment({ isOpen, closeModal }) {
   const { form, errors, handleChange, handleBlur } = Form(initialForm, validationsForm);
 
@@ -55,7 +73,6 @@ export default function CartViewPayment({ isOpen, closeModal }) {
       const db = getFirestore();
       const ordersCollection = collection(db, "orders");
 
-      // updateDoc(biciDoc, { total: 150 });
       addDoc(ordersCollection, order)
         .then(({ id }) => {
           setOrder(id);

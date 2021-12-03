@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ItemDetail = ({ item }) => {
   const url = "https://raw.githubusercontent.com/JYachelini/Proyecto_React/main/src/assets/img/";
   return (
-    <section className="card" data-key={item.id}>
+    <section className="card item-detail" data-key={item.id}>
       {item ? (
         <>
           <img src={url + item.img} alt="" />
@@ -20,9 +20,7 @@ const ItemDetail = ({ item }) => {
             <ItemCount initial="0" item={item} />
           </div>
         </>
-      ) : (
-        "Cargando datos..."
-      )}
+      ) : null}
     </section>
   );
 };
