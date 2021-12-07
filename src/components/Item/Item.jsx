@@ -5,15 +5,15 @@ function Item({ item }) {
   const url = "https://raw.githubusercontent.com/JYachelini/Proyecto_React/main/src/assets/img/";
   return (
     <article className="card" data-key={item.id}>
-      <img src={url + item.img} alt="" />
-      <div className="sub-card">
-        <Link to={`/item/${item.id}`} className="card-titulo">
-          {item.commercialName}
-        </Link>
-        <div className="card-price">
-          <span className="card-price-monto">{item.price}$</span>
+      <Link to={`/item/${item.id}`}>
+        <img src={url + item.img} alt="" />
+        <div className="sub-card">
+          <h1 className="card-titulo">{item.commercialName}</h1>
+          <div className="card-price">
+            <span className="card-price-monto">{item.price}$</span>
+          </div>
         </div>
-      </div>
+      </Link>
     </article>
   );
 }

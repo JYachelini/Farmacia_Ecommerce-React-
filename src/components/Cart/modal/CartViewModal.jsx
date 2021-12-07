@@ -1,8 +1,7 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../../contexts/cart/CartContext";
-import { CartModalFunction } from "../functions/CartModalFunction";
 import ItemModal from "../modal/ItemModal";
-import CartForm from "../page/CartForm";
 
 const CartViewModal = ({ isOpen, closeModal }) => {
   const { cart, clearCart } = useContext(CartContext);
@@ -10,18 +9,11 @@ const CartViewModal = ({ isOpen, closeModal }) => {
   // Se saca el total de los items sumando los quantity
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
-  const [isOpenForm, openModalForm, closeModalForm] = CartModalFunction(false);
-
   return (
     <>
-      <div className={`overlay ${isOpen && !isOpenForm && "is-visible"}`} id="overlay" onClick={closeModal}></div>
-      {/* Cuando la variable isOpen(del modal) sea verdadera y cuando la variable isOpenForm(El modal del formulario), se abré el modal.*/}
-      <div
-        className={`modalCarrito ${isOpen || "carritoClose"} ${isOpen && !isOpenForm && "is-visible carritoAnimation"} ${
-          isOpenForm && "carritoClose"
-        }`}
-        id="modalCarrito"
-      >
+      <div className={`overlay ${isOpen && "is-visible"}`} id="overlay" onClick={closeModal}></div>
+      {/* Cuando la variable isOpen(del modal) sea verdadera se abre el modal.*/}
+      <div className={`modalCarrito ${isOpen || "carritoClose"} ${isOpen && "is-visible carritoAnimation"} `} id="modalCarrito">
         <button className="btn-cerrar-carrito" id="closeCarrito" onClick={closeModal}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "rgba(0, 0, 0, 1)" }}>
             <path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path>
@@ -58,16 +50,17 @@ const CartViewModal = ({ isOpen, closeModal }) => {
                 </div>
               </div>
               <div className="container-btn-pagar">
-                <button id="btn-payment" className="btn-pagar" onClick={openModalForm}>
-                  Continuar con la compra
-                </button>
+                <Link to="/cart">
+                  <button id="btn-payment" className="btn-pagar">
+                    Continuar con la compra
+                  </button>
+                </Link>
               </div>
             </div>
           ) : null}
           {/* Solo imprime este contenedor si hay items en el carrito */}
         </div>
       </div>
-      <CartForm isOpen={isOpenForm} closeModal={closeModalForm} />
     </>
   );
 };

@@ -37,9 +37,6 @@ const ItemCount = ({ initial, item, btn = true }) => {
   };
 
   const addItem = () => {
-    console.log(count <= item.stock);
-    console.log(count);
-    console.log(item.stock);
     if (count > 0) {
       if (count <= item.stock) {
         addToCart(item, count);

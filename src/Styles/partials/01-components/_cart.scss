@@ -13,6 +13,7 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     margin: 0 2rem;
     padding: 1.5rem;
+    flex-basis: 60%;
     & h3 {
       width: 95%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -29,10 +30,10 @@
   & .cart-checkout {
     display: flex;
     flex-direction: column;
-    width: 25%;
     background-color: var(--background-color);
     padding: 1.5rem;
     height: 50%;
+    flex-basis: 40%;
     & div:not(:first-child) {
       padding: 1rem 0;
     }
@@ -143,10 +144,11 @@
 
 .cart-secondStep {
   display: flex;
-  margin: 3rem;
+  margin: 5rem;
   & .cart-information {
     width: 100%;
     padding: 2rem;
+    flex-basis: 60%;
     & span {
       width: 100%;
       display: block;
@@ -188,6 +190,7 @@
     flex-direction: column;
     background-color: var(--background-color);
     justify-content: space-between;
+    flex-basis: 40%;
     .btn-complete-information {
       display: flex;
       flex-direction: column;
@@ -274,7 +277,7 @@
         box-shadow: inset 0px 0px 0px 30px #4bb71b;
       }
     }
-    width: 33%;
+    width: 60%;
     margin: 4rem auto;
     min-height: 15rem;
     border-radius: 10px;

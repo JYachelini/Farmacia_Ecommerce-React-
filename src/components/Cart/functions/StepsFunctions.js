@@ -9,10 +9,6 @@ export const StepsFunctions = () => {
     setConfirmation(confirmation + 1);
   };
 
-  // const backStep = () => {
-  //   setStep(step - 1);
-  // };
-
   const selectStep = (e) => {
     setStep(parseInt(e.target.childNodes[0].textContent));
     setConfirmation(parseInt(e.target.childNodes[0].textContent));

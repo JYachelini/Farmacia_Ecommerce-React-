@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Proyecto React CorderHouse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install react on yout project, clone the repositore and exe
 
 ## Available Scripts
 

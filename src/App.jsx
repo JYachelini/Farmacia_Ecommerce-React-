@@ -7,6 +7,7 @@ import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import Footer from "./components/Footer/Footer";
 import { CartProvider } from "./contexts/cart/CartContext";
 import Cart from "./components/Cart/page/Cart";
+import Home from "./components/Home/Home";
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
         <section className="global-container">
           <Switch>
             <Route exact path="/">
-              <ItemListContainer greeting="Productos" />
+              <Home />
             </Route>
             <Route exact path="/item/:itemId">
               <ItemDetailContainer />

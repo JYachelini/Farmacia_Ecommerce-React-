@@ -1,0 +1,66 @@
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  .carousel {
+    transform-style: preserve-3d;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    .carousel__photo {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 100;
+      transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+      height: 100%;
+    }
+    .carousel__photo.initial,
+    .carousel__photo.active {
+      opacity: 1;
+      position: relative;
+      z-index: 900;
+    }
+    .carousel__photo.prev,
+    .carousel__photo.next {
+      z-index: 800;
+    }
+    .carousel__photo.prev {
+      transform-style: translateX(-100%);
+    }
+    .carousel__photo.next {
+      transform-style: translateX(100%);
+    }
+    .carousel__button--prev,
+    .carousel__button--next {
+      position: absolute;
+      top: 40%;
+      width: 7rem;
+      height: 7rem;
+      transform-style: translateY(-50%);
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1001;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        left: 54%;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+    }
+    .carousel__button--prev {
+      left: 0;
+    }
+    .carousel__button--next {
+      right: 0;
+      &::after {
+        left: 47%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+}

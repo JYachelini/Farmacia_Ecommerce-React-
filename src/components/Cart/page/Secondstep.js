@@ -75,7 +75,7 @@ const validationsForm = (form) => {
   return errors;
 };
 
-export default function Secondstep({ nextStep, totalPrice, setOrder }) {
+export default function Secondstep({ nextStep, totalPrice, setOrder, confirmation }) {
   const { form, errors, handleChange, handleBlur } = Form(initialForm, validationsForm);
   const { cart, clearCart } = useContext(CartContext);
 
@@ -120,11 +120,9 @@ export default function Secondstep({ nextStep, totalPrice, setOrder }) {
       const db = getFirestore();
       const ordersCollection = collection(db, "orders");
 
-      addDoc(ordersCollection, order)
-        .then(({ id }) => {
-          setOrder(id);
-
-        })
+      addDoc(ordersCollection, order).then(({ id }) => {
+        setOrder(id);
+      });
       cart.forEach((item) => {
         const itemRef = doc(db, "items", item.id);
         updateDoc(itemRef, { stock: item.stock });
@@ -274,11 +272,7 @@ export default function Secondstep({ nextStep, totalPrice, setOrder }) {
           <span>
             Total <p>{totalPrice}$</p>
           </span>
-          {/* <Link to={`${cart.length && confirmation === 2 && errors.length === 0 ? "/cart/confirmation" : "/cart/information"}`}> */}
-          {/* Si existen items en el carrito, cuando tocas el botón te manda a la página confirmacion */}
           <button onClick={sendOrder}>Confirmar</button>
-          {/* Si existen items en el carrito y estas en la confimación 1 ejecuta la funcion nextStep */}
-          {/* </Link> */}
         </div>
       </div>
     </div>

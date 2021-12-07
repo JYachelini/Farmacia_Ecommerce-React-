@@ -1,3 +1,18 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 10%;
+  width: auto;
+  transition: 1s;
+  background-color: white;
+  z-index: 5;
+  max-height: 92px;
+  a {
+    color: #1b1b1b;
+    letter-spacing: 1px;
+  }
+}
 #navbarRight {
   padding: 5px;
   max-width: 250px;

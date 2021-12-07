@@ -43,7 +43,7 @@ function Cart() {
         </ul>
       </div>
       {step === 1 ? <Firststep nextStep={nextStep} totalPrice={totalPrice} confirmation={confirmation} /> : null}
-      {step === 2 ? <Secondstep nextStep={nextStep} totalPrice={totalPrice} setOrder={setOrder}/> : null}
+      {step === 2 ? <Secondstep nextStep={nextStep} totalPrice={totalPrice} setOrder={setOrder} confirmation={confirmation}/> : null}
       {step === 3 ? <Thirdstep order={order}/> : null}
     </>
   );

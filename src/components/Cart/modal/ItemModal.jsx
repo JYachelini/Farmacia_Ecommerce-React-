@@ -20,7 +20,7 @@ export default function ItemModal({ item, isOpen, page = false, remove = true, d
       </div>
       <div className="flex-column">
         {(isOpen || page) && <ItemCount initial={item.quantity} item={item} btn={false} />}
-        {/* Imrpime el ItemCount cuando el modal esta abierto y el page detecta si es para la página /cart o para el modal */}
+        {/* Imprime el ItemCount cuando el modal esta abierto y el page detecta si es para la página /cart o para el modal */}
         {remove && (
           <button className="borrar-itemCarrito" onClick={() => removeItem(item)}>
             Borrar

@@ -161,8 +161,12 @@ footer {
     display: flex;
     font-size: 10px;
     color: gray;
-    justify-content: center;
-    align-self: center;
-    margin-left: 10px;
+    align-items: center;
+    a {
+      padding-left: 1rem;
+      svg:hover {
+        fill: white;
+      }
+    }
   }
 }

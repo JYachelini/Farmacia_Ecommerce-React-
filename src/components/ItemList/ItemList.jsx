@@ -8,9 +8,7 @@ const ItemList = ({ titulo, category }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Esto es para traer todos los elementos de la coleccion
     const db = getFirestore();
-    // where("price", ">", 100)
     getDocs(collection(db, "items")).then((snapshot) => {
       let items = snapshot.docs.map((doc) => doc.data());
       if (category) {
@@ -23,8 +21,10 @@ const ItemList = ({ titulo, category }) => {
   }, [category]);
   return (
     <>
-      <section className="container-articles">
+      <div className="category-title">
         <h1>{titulo ? titulo : category.replace(/-+/g, " ")}</h1>
+      </div>
+      <section className="container-articles">
         {products.length ? products.map((producto) => <Item item={producto} key={producto.id} />) : <Loader />}
       </section>
     </>

@@ -18,7 +18,6 @@ export function CartProvider({ children }) {
         setCart([...cart, newProduct]);
       } else {
         const existingItem = cart.find((product) => product.id === item.id);
-        // item.stock = item.stock - quantity;
 
         // Se checkea si esta repetido
         existingItem.quantity = existingItem.quantity + quantity;
