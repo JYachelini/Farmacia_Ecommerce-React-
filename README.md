@@ -15,14 +15,14 @@ Programas necesarios:
 
 Librerías necesarias:
 
-- [Sass] (https://sass-lang.com/) - Extensión de CSS, en mi caso uso la extensión [Live Sass Compiler] (https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) en Visual Studio Code
-- [Firebase] (https://firebase.google.com/) - Almacenamiento de los productos y ordenes. Recomiendo usar la última versión y leer la documentación para seguir la instalación.
-- [React-router-dom] (https://v5.reactrouter.com/) - Rutas de URL dinámicas.
+- [Sass](https://sass-lang.com/) - Extensión de CSS, en mi caso uso la extensión [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) en Visual Studio Code
+- [Firebase](https://firebase.google.com/) - Almacenamiento de los productos y ordenes. Recomiendo usar la última versión y leer la documentación para seguir la instalación.
+- [React-router-dom](https://v5.reactrouter.com/) - Rutas de URL dinámicas.
 
 ## Previsualizar
 
-Pueden visualizar el proyecto [acá] (https://farmaciayachelini.netlify.app/). Por el momento, las imagenes son simplemente como ejemplo, lo mismo que los productos. Hay varios productos que se necesitan una receta para poder comprarlos pero lo que hay ahora es únicamente para probar la funcionalidad.
+Pueden visualizar el proyecto [acá](https://farmaciayachelini.netlify.app/). Por el momento, las imagenes son simplemente como ejemplo, lo mismo que los productos. Hay varios productos que se necesitan una receta para poder comprarlos pero lo que hay ahora es únicamente para probar la funcionalidad.
 
-Desarrollado por Julián Yachelini [Linkedin] (https://www.linkedin.com/in/jyachelini/)
+Desarrollado por Julián Yachelini [Linkedin](https://www.linkedin.com/in/jyachelini/)
 
-![grab-landing-page] (https://raw.githubusercontent.com/JYachelini/Proyecto_React/main/src/assets/img/boceto_gif.gif)
+![grab-landing-page](https://raw.githubusercontent.com/JYachelini/Proyecto_React/main/src/assets/img/boceto_gif.gif)
