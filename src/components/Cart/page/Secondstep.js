@@ -265,7 +265,7 @@ export default function Secondstep({ nextStep, totalPrice, setOrder, confirmatio
       <div className="aside-information">
         <div className="cart-content">
           {cart.map((producto) => (
-            <ItemModal item={producto} key={producto.id} remove={false} description={false} />
+            <ItemModal item={producto} key={producto.id} remove={false} description={false} counter={true}/>
           ))}
         </div>
         <div className="btn-complete-information">

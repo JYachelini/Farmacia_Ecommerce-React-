@@ -3,14 +3,14 @@ import React, { useContext } from "react";
 import { CartContext } from "../../../contexts/cart/CartContext";
 import ItemCount from "../../ItemCount/ItemCount";
 
-export default function ItemModal({ item, isOpen, page = false, remove = true, description = true}) {
+export default function ItemModal({ item, isOpen, page = false, remove = true, description = true, counter = false}) {
   const { removeItem } = useContext(CartContext);
 
   const url = "https://raw.githubusercontent.com/JYachelini/Proyecto_React/main/src/assets/img/";
   return (
     <li className="itemCarrito" data-id={item.id}>
       <Link to={`/item/${item.id}`} className="counter-container">
-        <span id="counter">{item.quantity}</span>
+        { counter && <span id="counter">{item.quantity}</span>}
         <img src={url + item.img} alt={item.name} />
       </Link>
       <div className="carrito-details">

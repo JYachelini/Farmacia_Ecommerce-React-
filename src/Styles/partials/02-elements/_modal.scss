@@ -370,6 +370,32 @@
   }
 }
 
+.container-carrito .carrito .itemCarrito {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  transition: all ease-in-out 0.5s;
+  a {
+    width: 30%;
+    img {
+      width: 100%;
+    }
+  }
+  &:not(:first-child) {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  &:hover {
+    background-color: var(--background-color);
+  }
+  & .carrito-details {
+    padding-left: 1rem;
+  }
+  .counter-to-cart {
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+}
+
 .itemCarrito {
   display: flex;
   justify-content: space-between;
