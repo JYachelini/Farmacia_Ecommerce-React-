@@ -531,8 +531,8 @@ nav .hamburger-menu span {
     background-color: white;
     padding: 0;
     min-height: 0;
-    -webkit-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
     opacity: 0;
   }
 }
@@ -800,11 +800,10 @@ nav .expanded {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 3em;
   }
   .container-articles .card {
     width: 70%;
-    margin: auto;
+    margin: 1rem auto;
   }
   .container-articles .item-detail {
     -webkit-box-orient: vertical;
