@@ -489,9 +489,11 @@ nav .hamburger-menu {
           justify-content: center;
   position: absolute;
   z-index: 50;
-  top: 35px;
-  left: 30px;
+  top: 0;
+  left: 0;
   gap: 3px;
+  padding: 2em;
+  cursor: pointer;
 }
 
 nav .hamburger-menu span {
