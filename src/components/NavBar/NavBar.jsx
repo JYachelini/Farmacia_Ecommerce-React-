@@ -1,7 +1,6 @@
 import CartWidget from "../Cart/CartWidget";
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
-import Hamburger from "./Hamburger";
 import { useState } from "react";
 
 export default function NavBar({ counter }) {
