@@ -53,6 +53,9 @@
         display: flex;
         justify-content: space-evenly;
         border-radius: 0;
+        @media only screen and (max-width: 669px){
+          width: auto;
+        }
       }
       .add-to-cart {
         position: relative;
@@ -92,6 +95,18 @@
         height: calc(100% + 15px);
         border-color: var(--button-color-dark);
       }
+    }
+  }
+  @media only screen and (max-width: 669px){
+    flex-direction: column;
+    gap: 3em;
+    .card{
+      width: 70%;
+      margin: auto;
+    }
+    .item-detail{
+      flex-direction: column-reverse;
+      margin-top: 2em;
     }
   }
 }

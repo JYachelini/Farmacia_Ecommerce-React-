@@ -1,11 +1,21 @@
 import CartWidget from "../Cart/CartWidget";
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
+import Hamburger from "./Hamburger";
+import { useState } from "react";
 
 export default function NavBar({ counter }) {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <nav>
-      <div id="navbarLeft">
+      <div className="hamburger-menu" onClick={()=>setOpen(!open)}>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+      <div id="navbarLeft" className={`${open && "expanded"}`}>
         <ul className="navbar-left">
           <li>
             <Link to={`/category/medicamentos`}>Medicamentos</Link>
@@ -16,7 +26,7 @@ export default function NavBar({ counter }) {
         </ul>
       </div>
       <Logo />
-      <div id="navbarRight">
+      <div id="navbarRight" className={`${open && "expanded"}`}>
         <ul className="navbar-right">
           <li className="navbar-search-box">
             <input className="navbar-search-txt" type="text" placeholder="Buscar..." />

@@ -4,13 +4,70 @@ nav {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0 10%;
   width: auto;
-  transition: 1s;
+  transition: all 1s ease-in-out;
   background-color: white;
   z-index: 5;
   max-height: 92px;
+  min-height: 86px;
+  position: relative;
   a {
     color: #1b1b1b;
     letter-spacing: 1px;
+    @media only screen and (max-width: 669px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      svg {
+        display: flex;
+        margin: auto;
+      }
+    }
+  }
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    z-index: 50;
+    top: 35px;
+    left: 30px;
+    gap: 3px;
+    span {
+      height: 3px;
+      width: 25px;
+      background-color: #1b1b1b;
+    }
+    @media only screen and (min-width: 670px) {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 669px) {
+    flex-direction: column;
+    padding: 0;
+    #navbarLeft {
+      margin-top: 92px;
+      ul {
+        flex-direction: column;
+      }
+    }
+    #navbarRight {
+      max-width: none;
+    }
+    #navbarRight,
+    #navbarLeft {
+      background-color: white;
+      padding: 0;
+      min-height: 0;
+      transition: all 1s ease-in-out;
+      opacity: 0;
+    }
+  }
+  .expanded {
+    padding: 1em !important;
+    min-height: 100px !important;
+    opacity: 1 !important;
   }
 }
 #navbarRight {
@@ -34,6 +91,9 @@ nav {
     a {
       position: relative;
     }
+  }
+  @media only screen and (max-width: 669px) {
+    // display: none;
   }
 }
 

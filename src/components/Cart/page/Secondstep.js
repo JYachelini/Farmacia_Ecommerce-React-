@@ -26,49 +26,49 @@ const validationsForm = (form) => {
   // Las expresiones regulares de cada casilla
 
   if (!form.name.trim()) {
-    errors.name = "Por favor, completa el nombre.";
+    errors.name = "Nombre.";
   } else if (!regexName.test(form.name.trim())) {
-    errors.name = "Solo puedes ingresar letras y espacios en blanco.";
+    errors.name = "Solo letras.";
   }
   if (!form.last.trim()) {
-    errors.last = "Por favor, completa el apellido.";
+    errors.last = "Apellido.";
   } else if (!regexName.test(form.last.trim())) {
-    errors.last = "Solo puedes ingresar letras y espacios en blanco.";
+    errors.last = "Solo letras.";
   }
   if (!form.email.trim()) {
-    errors.email = "Por favor, completa el email.";
+    errors.email = "Email.";
   } else if (!regexEmail.test(form.email.trim())) {
-    errors.email = "El Email es incorrecto";
+    errors.email = "Email incorrecto";
   }
   if (!form.phone.trim()) {
-    errors.phone = "Por favor, completa el telefono.";
+    errors.phone = "Telefono.";
   } else if (!regexPhone.test(form.phone.trim())) {
-    errors.phone = "Solo puedes ingresar numeros";
+    errors.phone = "Solo numeros";
   }
   if (!form.postal.trim()) {
-    errors.postal = "Por favor, completa el código postal.";
+    errors.postal = "Código postal.";
   } else if (!regexPhone.test(form.postal.trim())) {
-    errors.postal = "Solo puedes ingresar numeros";
+    errors.postal = "Solo numeros";
   }
   if (!form.state.trim()) {
-    errors.state = "Por favor, completa la provincia.";
+    errors.state = "Provincia.";
   } else if (!regexName.test(form.state.trim())) {
-    errors.state = "Ingresa una provincia valida";
+    errors.state = "Provincia invalida";
   }
   if (!form.district.trim()) {
-    errors.district = "Por favor, completa la localidad.";
+    errors.district = "Localidad.";
   } else if (!regexName.test(form.district.trim())) {
-    errors.district = "Ingresa una localidad valida";
+    errors.district = "Localidad invalida";
   }
   if (!form.street.trim()) {
-    errors.street = "Por favor, completa la calle.";
+    errors.street = "Calle.";
   } else if (!regexName.test(form.street.trim())) {
-    errors.street = "Ingresa una calle valida";
+    errors.street = "Calle invalida";
   }
   if (!form.number.trim()) {
-    errors.number = "Por favor, completa el numero.";
+    errors.number = "Numero.";
   } else if (!regexPhone.test(form.number.trim())) {
-    errors.number = "Ingresa un numero valido";
+    errors.number = "Numero invalido";
   }
   // Si las cassillas estan vacias, ejecutará el primer if. Si las casillas contienen contenido pero no matchea con las expresiones regulares ejecutará el segundo if.
 
